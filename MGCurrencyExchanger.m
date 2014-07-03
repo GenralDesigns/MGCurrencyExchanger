@@ -121,4 +121,16 @@
     
 }
 
++(NSString *)formattedCurrencyWithAmount:(double)amount currency:(NSLocale *)currencyLocale symbol:(BOOL)symbolBool {
+    
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [f setLocale:currencyLocale];
+    [f setLocalizesFormat:YES];
+    NSString *currencySymbol = [currencyLocale currencySymbol];
+    [f setCurrencySymbol:symbolBool ? currencySymbol : @""];
+    
+    return [f stringFromNumber:@(amount)];
+}
+
 @end

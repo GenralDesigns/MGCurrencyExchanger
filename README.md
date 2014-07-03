@@ -78,14 +78,16 @@ Helper methods
 I've also added a few helpful methods to aid you on your exchanging adventures, the first being `MGCountryNames`. This gives all the locale identifiers for every country available in iOS. Use it like so:      
 `NSLocale *locale = [NSLocale localeWithCountryName:MGCountryAustralia`
     
-The next method is `-(NSString *)currencyCode;` this method will return the currency code that corresponds to whatever locale you give it. Likewise, `-(NSString *)currencySymbol;` returns the symbol.
+The next method is `-(NSString *)currencyCode;` this method will return the currency code that corresponds to whatever locale you give it. Likewise, `-(NSString *)currencySymbol;` returns the symbol. 
 
 `-(NSString *)currencyNameFromCurrencyCode` will return the name for the currency you give it in whatever language the locale you give it is.
 
 
-`+(NSLocale *)localeFromCurrencyCode:(NSString *)currencyCode;` creates a locale from a given currency code.
+`+(NSLocale *)localeFromCurrencyCode:(NSString *)currencyCode;` creates a locale from a given currency code. All of the above methods are extensions of `NSLocale`.
 
-And that's it!
+
+Finally, there's one more method: `+(NSString *)formattedCurrencyWithAmount:(double)amount currency:(NSLocale *)currencyLocale symbol:(BOOL)symbolBool;`. This does exactly like it says. It takes an amount, a currency, and a `BOOL` saying whether or not to format in the currency symbol. This localizes the comma and decimal point separators. 
+
     
     
 

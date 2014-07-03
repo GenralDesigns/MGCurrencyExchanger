@@ -14,5 +14,6 @@
 
 +(double)exchangeAmountOnline:(double)amount fromCurrency:(NSLocale *)fromLocale toCurrency:(NSLocale *)toLocale withError:(NSError **)error;
 +(double)exchangeAmountOffline:(double)amount fromCurrency:(NSLocale *)fromLocale toCurrency:(NSLocale *)toLocale fromFile:(NSArray *)csvFile withError:(NSError **)error;
++(NSString *)formattedCurrencyWithAmount:(double)amount currency:(NSLocale *)currencyLocale symbol:(BOOL)symbolBool;
 
 @end
